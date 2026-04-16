@@ -18,15 +18,15 @@ jobs:
       uses: actions/checkout@v4
 
 
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u olaranmmy --password-stdin
 
-    - name: Build Docker Image
+
+
+    - name: Build Docker Image  
       run:  sudo docker build -t olaranmmy/projectpea:${{ env.IMAGE_TAG }} .
 
-
-
-    - name: Login to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u olaranmmy --password-stdin
-
+      
 
 
     - name: Push Docker Image
