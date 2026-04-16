@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    padding: 0;
+    /* width: 100vw; */
+    height: 0vh;
+    background-color: rgb(95, 177, 255);
+}
+.c1{
+    text-decoration-color: whitesmoke;
+    background: coral;
+    width: 50vw;
+    position: absolute;
+    border-radius:30% 35% 45% 30% ;
+}
+
+.c2{
+    
+}

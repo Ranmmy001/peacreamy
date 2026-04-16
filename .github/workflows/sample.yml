@@ -1,0 +1,47 @@
+name: cicd_peacreamy
+
+on: 
+  push:
+    branches:
+    - main
+    - master
+env:
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+
+    - name: Build Docker Image
+      run:  sudo docker build -t olaranmmy/projectpea:${{ env.IMAGE_TAG }} .
+
+
+
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u olaranmmy --password-stdin
+
+
+
+    - name: Push Docker Image
+      run: sudo docker push olaranmmy/projectpea:${{ env.IMAGE_TAG }}
+
+
+      
+    
+
+
+
+    
+
+    
+
+
+
+ 
